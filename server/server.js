@@ -25,7 +25,7 @@ const PORT= 8000;
 
 const USERNAME= process.env.DB_USERNAME;
 const PASSWORD= process.env.DB_PASSWORD;
-const URL=`mongodb+srv://${username}:${password}@openup.6bciesu.mongodb.net/?retryWrites=true&w=majority`;
+const URL=`mongodb+srv://${USERNAME}:${PASSWORD}@openup.6bciesu.mongodb.net/?retryWrites=true&w=majority`;
 connection(URL);
 
 app.get('/protected', authenticateToken, (req, res) => {
