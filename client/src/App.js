@@ -43,7 +43,7 @@ function App() {
     const token = localStorage.getItem('authToken');
   
     try {
-      const response = await axios.get('http://localhost:8000/protected', {
+      const response = await axios.get('https://openup.onrender.com/protected', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
