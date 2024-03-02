@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as actionTypes from '../constants/postConstants';
 
 
-const URL= 'http://localhost:8000';
+const URL= 'https://openup.onrender.com';
 
 
 
