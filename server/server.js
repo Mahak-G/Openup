@@ -11,15 +11,14 @@ import router from './routes/route.js';
 const app=express();
 dotenv.config();
 
-app.use(cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST"],
-    credentials: true
-}));
+app.use(cors());
 app.use(bodyParser.json({extended: true}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/',router);
-
+app.get("/",(req,res) =>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running");
+});
 
 const PORT= 8000;
 
