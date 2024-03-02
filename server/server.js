@@ -23,7 +23,13 @@ app.get("/",(req,res) =>{
     res.setHeader("Access-Control-Allow-Credentials","true");
     res.send("API is running");
 });
-
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://openup-frontend.onrender.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 const PORT= 8000;
 
 const USERNAME= process.env.DB_USERNAME;
