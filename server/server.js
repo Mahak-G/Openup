@@ -10,7 +10,10 @@ import router from './routes/route.js';
 
 const app=express();
 dotenv.config();
-app.use(cors());
+app.use(cors({
+    origin: "https://openup.onrender.com",
+}
+));
 // app.use(cors({
 //     origin: ["https://openup-frontend.onrender.com/"],
 //     methods: ["GET", "POST"],
