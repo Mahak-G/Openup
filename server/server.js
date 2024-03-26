@@ -12,6 +12,7 @@ const app=express();
 dotenv.config();
 app.use(cors({
     origin: "https://openup-frontend.onrender.com",
+    credentials: true
 }
 ));
 // app.use(cors({
