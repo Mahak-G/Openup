@@ -321,9 +321,7 @@ export default function SignupInfo({onLogin}) {
                 </AppInfo>
                 <SignupInfoContainer>
                     <Typography style={{fontSize: '20px', textAlign: 'start', marginTop: '-70px', marginLeft: '30%', color: 'white'}}>Account Details</Typography>
-                    <TextFieldContainer>
-                        <TextField placeholder="Set Password" onChange={(e) => onValueChange(e)} name='password' type="password" fullWidth size="small" sx={{border: 'none', "& fieldset": { border: 'none' }}} InputProps={{ style: { color: 'white' } }}/>
-                    </TextFieldContainer>
+                    
                     <UsernameContainer>
                         <Typography style={{fontSize: '17px', margin: '5px 0px 5px 10px', color: '#bdbdbd'}}>Set Username</Typography>
                         <DropdownContainer>
@@ -350,6 +348,9 @@ export default function SignupInfo({onLogin}) {
                             <input type="date" style={{fontSize: '15px'}} onChange={e => setDate(e.target.value)} />
                         </DateContainer>
                     </SetDateContainer>
+                    <TextFieldContainer>
+                        <TextField placeholder="Set Password" onChange={(e) => onValueChange(e)} name='password' type="password" fullWidth size="small" sx={{border: 'none', "& fieldset": { border: 'none' }}} InputProps={{ style: { color: 'white' } }}/>
+                    </TextFieldContainer>
                     <BtnContainer>
                         <BtnForSignup onClick={() => signupuser()}>Signup</BtnForSignup>
                     </BtnContainer>
