@@ -71,7 +71,7 @@ export const userSignupUpdate = async (request,response) =>{
         updatedUser.password = request.body.password;
         updatedUser.color = request.body.color;
         updatedUser.birthdate = request.body.birthdate;
-        updatedUser.securityAnswer = request.body.securityAnswer;
+        updatedUser.securityAnswer = updatedUser.securityAnswer;
         await updatedUser.save();
         const oldUsername = request.body.pusername;
         const newUsername = request.body.username;
