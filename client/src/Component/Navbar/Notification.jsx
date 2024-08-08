@@ -43,7 +43,7 @@ const values={
 };
 const Notification = ({account}) => {
     const [notificationData, setNotificationData] = useState(values);
-    const URL= 'http://localhost:8000';
+    const URL= 'https://openup.onrender.com';
     
     const username=account;
     const fetchN = async () => {
