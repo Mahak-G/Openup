@@ -1,5 +1,6 @@
 import { useRef, useState,useEffect } from 'react';
 import { Button, Box, styled, Badge } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 // import Button from '@material-ui/core/Button';
 import axios from 'axios';
@@ -69,7 +70,7 @@ const Notification = ({account}) => {
             setIsActive(false);
         }
     });
-    const count=notificationData.comment+notificationData.like;
+   const count = (notificationData.comment || 0) + (notificationData.like || 0);;
     
     const handleIconClick = (event) => {
         event.stopPropagation();
@@ -78,6 +79,7 @@ const Notification = ({account}) => {
             deleteAllNotifications(username);
         }
     };
+    const navigate = useNavigate();
     const deleteAllNotifications = async (username) => {
         try {
             const response = await axios.post(`${URL}/deletenotifications/${username}`);
@@ -86,6 +88,7 @@ const Notification = ({account}) => {
             }
             fetchN();
             console.log('Notifications deleted successfully');
+            navigate('/');
         } catch (error) {
             console.error('Error deleting notifications:', error);
         }
