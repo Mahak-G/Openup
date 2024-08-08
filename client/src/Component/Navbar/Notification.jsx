@@ -71,15 +71,16 @@ const Notification = ({account}) => {
         }
     });
    const count = (notificationData.comment || 0) + (notificationData.like || 0);;
-    
+    const navigate = useNavigate();
     const handleIconClick = (event) => {
         event.stopPropagation();
         setIsActive(!isActive);
         if (!isActive) {
             deleteAllNotifications(username);
+            navigate('/');
         }
     };
-    const navigate = useNavigate();
+    
     const deleteAllNotifications = async (username) => {
         try {
             const response = await axios.post(`${URL}/deletenotifications/${username}`);
@@ -88,7 +89,7 @@ const Notification = ({account}) => {
             }
             fetchN();
             console.log('Notifications deleted successfully');
-            navigate('/');
+            
         } catch (error) {
             console.error('Error deleting notifications:', error);
         }
