@@ -161,7 +161,7 @@ const EditProfile = ({userData,onLogin}) => {
     const colors = ["red", "blue", "green", "yellow"];
     const [color, setColor] = useState();
 
-    const [date, setDate] = useState();
+    const [date, setDate] = useState('');
     const [isHover, setIsHover] = useState(false);
     const handleMouseEnter = () => {
         setIsHover(true);
@@ -237,7 +237,7 @@ const EditProfile = ({userData,onLogin}) => {
         // console.log(e);
         signup.username=selected1+selected2+selected3;
         signup.birthdate=date;
-        signup.color=color;
+        signup.color=colorp;
         signup.pusername=userData.username;
         signup.securityAnswer=userData.securityAnswer;
         // if([e.target.name]=="username")
