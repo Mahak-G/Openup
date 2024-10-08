@@ -12,4 +12,5 @@ This platform fosters a supportive community, believing each shared thought is a
 ## Tech Stack
 
 ReactJS, MongoDB, NodeJS, Express, deployed on Render, JWT authentication
+Deploy link: https://openup-frontend.onrender.com/
 
